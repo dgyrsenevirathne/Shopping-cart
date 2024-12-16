@@ -1,0 +1,63 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav>
+        <h1>Simple Shop</h1>
+        <div class="cart-icon" onclick="toggleCart()">
+            🛒 <span id="cart-count">0</span>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="seller-section">
+            <h2>Add New Product</h2>
+            <form id="product-form">
+                <input type="text" id="product-name" placeholder="Product Name" required>
+                <input type="number" id="product-price" placeholder="Price" required>
+                <textarea id="product-description" placeholder="Description" required></textarea>
+                <input type="text" id="product-image" placeholder="Image URL" required>
+                <button type="submit">Add Product</button>
+            </form>
+        </div>
+
+        <div class="products-grid" id="products-container">
+            <!-- Products will be displayed here -->
+        </div>
+
+        <div class="cart-sidebar" id="cart-sidebar">
+            <h2>Shopping Cart</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <h3>Total: $<span id="cart-total">0</span></h3>
+            </div>
+        </div>
+    </div>
+    <!-- Add this modal form just before the closing body tag -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Product</h2>
+            <form id="edit-form">
+                <input type="hidden" id="edit-product-id">
+                <input type="text" id="edit-product-name" placeholder="Product Name" required>
+                <input type="number" id="edit-product-price" placeholder="Price" required>
+                <textarea id="edit-product-description" placeholder="Description" required></textarea>
+                <input type="text" id="edit-product-image" placeholder="Image URL" required>
+                <button type="submit">Update Product</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
